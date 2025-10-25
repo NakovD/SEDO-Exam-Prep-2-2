@@ -1,10 +1,4 @@
 pipeline {
-    triggers {
-        // Poll SCM for changes, equivalent to GitHub Actions on push
-        pollSCM('* * * * *') // optional, adjust as needed
-    }
-
-
     stages {
         stage('Setup .NET') {
             steps {
