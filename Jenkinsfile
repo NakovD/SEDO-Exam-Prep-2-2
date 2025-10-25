@@ -1,9 +1,10 @@
 pipeline {
+    agent any
+
+
     stages {
         stage('Setup .NET') {
             steps {
-                // Assuming .NET is installed on your Windows agent
-                // Otherwise, you could use a script to install it
                 bat "dotnet --version"
             }
         }
@@ -24,12 +25,6 @@ pipeline {
             steps {
                 bat 'dotnet test --no-build --verbosity normal'
             }
-        }
-    }
-
-    post {
-        always {
-            echo 'Pipeline finished'
         }
     }
 }
